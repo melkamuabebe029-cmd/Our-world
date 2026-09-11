@@ -54,9 +54,31 @@
             color: #444;
         }
 
-        /* Full Screen Overlay */
+        /* Floating Music Button */
+        .music-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 20px;
+            z-index: 999;
+            background-color: #d81b60;
+            color: #ffffff;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(216, 27, 96, 0.4);
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .music-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Full Screen Overlay with Smooth Transition */
         .modal {
-            display: none;
+            display: flex;
             position: fixed;
             z-index: 1000;
             left: 0;
@@ -66,6 +88,9 @@
             background-color: rgba(0, 0, 0, 0.9);
             justify-content: center;
             align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
         }
 
         .modal-content {
@@ -73,6 +98,17 @@
             max-height: 85%;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: scale(0.8);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .modal.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
         }
 
         .close-btn {
@@ -87,6 +123,12 @@
     </style>
 </head>
 <body>
+
+    <!-- Background Audio File -->
+    <audio id="bgMusic" loop src="music.mp3"></audio>
+
+    <!-- Floating Play/Pause Button -->
+    <button id="musicBtn" class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
 
     <header>
         <h1>our world</h1>
@@ -120,15 +162,33 @@
         function openModal(imageSrc) {
             var modal = document.getElementById("imageModal");
             var modalImg = document.getElementById("fullImage");
-            modal.style.display = "flex";
+            
             modalImg.src = imageSrc;
+            modal.classList.add("show");
         }
 
         function closeModal() {
-            document.getElementById("imageModal").style.display = "none";
+            var modal = document.getElementById("imageModal");
+            modal.classList.remove("show");
+        }
+
+        function toggleMusic() {
+            var audio = document.getElementById("bgMusic");
+            var btn = document.getElementById("musicBtn");
+
+            if (audio.paused) {
+                audio.play();
+                btn.innerHTML = "⏸️ Pause Music";
+                btn.style.backgroundColor = "#333333";
+            } else {
+                audio.pause();
+                btn.innerHTML = "🎵 Play Music";
+                btn.style.backgroundColor = "#d81b60";
+            }
         }
     </script>
 
 </body>
 </html>
+
 
