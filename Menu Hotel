@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sanyii Cafe Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 15px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin-bottom: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    img {
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Welcome to Sanyii Cafe</h1>
+  <p>Scan the QR code at your table to view our menu anytime!</p>
+
+  <hr>
+
+  <h2>Main Menu</h2>
+
+  <h3>1. Breakfast &amp; Snacks</h3>
+  <ul>
+    <li>
+      <strong>Club Sandwich</strong> - $8.00<br>
+      <em>Freshly toasted with chicken, bacon, lettuce, and tomato.</em><br>
+      <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af" alt="Club Sandwich" width="120">
+    </li>
+    <li>
+      <strong>Pancakes with Syrup</strong> - $6.50<br>
+      <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445" alt="Pancakes" width="120">
+    </li>
+  </ul>
+
+  <h3>2. Drinks &amp; Beverages</h3>
+  <ul>
+    <li>
+      <strong>Fresh Orange Juice</strong> - $3.50<br>
+      <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423" alt="Orange Juice" width="120">
+    </li>
+    <li>
+      <strong>Hot Coffee</strong> - $2.50<br>
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Hot Coffee" width="120">
+    </li>
+  </ul>
+
+
+</body>
+
+</html>
